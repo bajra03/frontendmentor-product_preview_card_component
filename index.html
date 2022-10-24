@@ -145,12 +145,17 @@
       margin-right: 10px;
     }
 
+    .card-img-container img {
+      width: 100%;
+    }
+
     .attribution { font-size: 11px; text-align: center; margin-top: 20px; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
-    @media (min-width: 1440px){
+    @media (min-width: 768px){
       .card-container {
         max-width: 560px;
+        max-height: 420px;
       }
 
       .card-row {
@@ -161,13 +166,12 @@
         width: 50%;
       }
 
-      .card-image {
-        background-image: url(./images/image-product-desktop.jpg);
-        height: 100%;
-      }
-
       .card-details {
-        padding: 30px 25px;
+        padding: 0 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   </style>
@@ -177,7 +181,12 @@
     <div class="card-container">
       <div class="card-row">
         <div class="card-col">
-          <div class="card-image"></div>
+          <div class="card-img-container">
+            <picture>
+              <source media="(min-width:768px)" srcset="./images/image-product-desktop.jpg">
+              <img src="./images/image-product-mobile.jpg" alt="Gabrielle Parfum">
+            </picture>
+          </div>
         </div>
         <div class="card-col">
           <div class="card-details">
